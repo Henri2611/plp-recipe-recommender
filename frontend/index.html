@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Food </title>
+  <link rel="stylesheet" href="css/style.css" >
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+        <h1>🍽 Recipe Recommender</h1>
+        <p>Smart Food Matcher - Find delicious recipes with ingredients you have!</p>
+        <div class="sdg-badge">SDG 2: Zero Hunger</div>
+    </header>
+
+    <!-- Ingredient Selection Section -->
+    <section class="ingredient-section">
+        <h2 class="section-title">Select Your Available Ingredients</h2>
+        
+        <div class="ingredient-grid" id="ingredientGrid">
+            <!-- Common Indian/Global Ingredients -->
+            <div class="ingredient-item" data-ingredient="chicken">
+                <span class="ingredient-emoji">🐔</span>
+                <span class="ingredient-name">Chicken</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="tomatoes">
+                <span class="ingredient-emoji">🍅</span>
+                <span class="ingredient-name">Tomatoes</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="onions">
+                <span class="ingredient-emoji">🧅</span>
+                <span class="ingredient-name">Onions</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="rice">
+                <span class="ingredient-emoji">🍚</span>
+                <span class="ingredient-name">Rice</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="potatoes">
+                <span class="ingredient-emoji">🥔</span>
+                <span class="ingredient-name">Potatoes</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="garlic">
+                <span class="ingredient-emoji">🧄</span>
+                <span class="ingredient-name">Garlic</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="ginger">
+                <span class="ingredient-emoji">🫚</span>
+                <span class="ingredient-name">Ginger</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="spinach">
+                <span class="ingredient-emoji">🥬</span>
+                <span class="ingredient-name">Spinach</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="lentils">
+                <span class="ingredient-emoji">🫘</span>
+                <span class="ingredient-name">Lentils</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="yogurt">
+                <span class="ingredient-emoji">🥛</span>
+                <span class="ingredient-name">Yogurt</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="coconut">
+                <span class="ingredient-emoji">🥥</span>
+                <span class="ingredient-name">Coconut</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="peppers">
+                <span class="ingredient-emoji">🌶️</span>
+                <span class="ingredient-name">Peppers</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="eggs">
+                <span class="ingredient-emoji">🥚</span>
+                <span class="ingredient-name">Eggs</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="fish">
+                <span class="ingredient-emoji">🐟</span>
+                <span class="ingredient-name">Fish</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="carrots">
+                <span class="ingredient-emoji">🥕</span>
+                <span class="ingredient-name">Carrots</span>
+            </div>
+            <div class="ingredient-item" data-ingredient="beans">
+                <span class="ingredient-emoji">🫘</span>
+                <span class="ingredient-name">Beans</span>
+            </div>
+        </div>
+
+        <!-- Add this inside .ingredient-section, just below the ingredient-grid -->
+<div class="custom-ingredient" style="text-align: center; margin-top: 20px;">
+  <input 
+      type="text" 
+      id="customIngredientInput" 
+      placeholder="Type an ingredient (e.g., 'milk')" 
+      style="padding: 10px; border-radius: 10px; border: 1px solid #ccc; width: 60%; max-width: 300px;"
+  >
+  <button 
+      id="addCustomIngredientBtn" 
+      style="margin-left: 10px; padding: 10px 20px; border: none; border-radius: 20px; background: #06d6a0; color: white; cursor: pointer; font-weight: bold;"
+  >
+      ➕ Add
+  </button>
+</div>
+
+
+        <!-- Selected Ingredients Display -->
+        <div class="selected-ingredients">
+            <h3>Selected Ingredients:</h3>
+            <div class="selected-list" id="selectedList">
+                <p style="color: #999; font-style: italic;">No ingredients selected yet</p>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="text-align: center;">
+            <button class="generate-btn" id="generateBtn" disabled>
+                🤖 Generate Recipes
+            </button>
+            <button class="clear-btn" id="clearBtn">
+                🗑️ Clear All
+            </button>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="recipes-section" id="recipesSection" style="display: none;">
+        <div class="ingredient-section">
+            <h2 class="section-title">Your Recipe Recommendations</h2>
+            <div id="recipesContainer">
+                <!-- Recipes will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+</div>
+  
+<script src="js/script.js"></script>
+</body>
+</html>
